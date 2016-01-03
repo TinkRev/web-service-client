@@ -1,0 +1,94 @@
+
+
+
+
+
+<div class="panel panel-default" ng-Controller="RegisterCtrl as register">
+    <!-- <div class="panel-heading">Register</div> -->
+    <div class="panel-body">
+        <form class="form-horizontal">
+            <fieldset>
+                <div id="legend">
+                    <legend class="">Register</legend>
+                </div>
+                <div class="control-group">
+                    <!-- E-mail -->
+                    <label class="control-label" for="email">E-mail</label>
+                    <div class="controls">
+                        <input type="text" id="email" name="email" placeholder="" class="input-xlarge" ng-model="register.userdata.email">
+                        <p class="help-block">Please provide your E-mail</p>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <!-- Password-->
+                    <label class="control-label" for="password">Password</label>
+                    <div class="controls">
+                        <input type="password" id="password" name="password" placeholder="" class="input-xlarge" ng-model="register.userdata.password">
+                        <p class="help-block">Password should be at least 4 characters</p>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <!-- Password -->
+                    <label class="control-label" for="password_confirm">Password (Confirm)</label>
+                    <div class="controls">
+                        <input type="password" id="password_confirm" name="password_confirm" placeholder="" class="input-xlarge" ng-model="register.userdata.passwordConfirm">
+                        <p class="help-block">Please confirm password</p>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <!-- First name-->
+                    <label class="control-label" for="first_name">First name</label>
+                    <div class="controls">
+                        <input type="text" id="first_name" name="first_name" placeholder="" class="input-xlarge" ng-model="register.userdata.first_name">
+                        <p class="help-block">Please provide your first name</p>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <!-- Last name-->
+                    <label class="control-label" for="last_name">Last name</label>
+                    <div class="controls">
+                        <input type="text" id="last_name" name="last_name" placeholder="" class="input-xlarge" ng-model="register.userdata.last_name">
+                        <p class="help-block">Please provide your last name</p>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <!-- GENDER-->
+                    <label class="control-label" for="gender">Gender</label>
+                    <div class="controls">
+                        <label class="radio-inline">
+                            <input type="radio" name="optradio" ng-model="register.userdata.gender" value="Male">Male</label>
+                        <label class="radio-inline">
+                            <input type="radio" name="optradio" ng-model="register.userdata.gender" value="Female">Female</label>
+                        <label class="radio-inline">
+                            <input type="radio" name="optradio" ng-model="register.userdata.gender" value="">Keep Null</label>
+                        <p class="help-block">Please provide your gender</p>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <!-- Button -->
+                    <div class="controls">
+                        <button class="btn btn-success" ng-click="register.doRegister()" data-toggle="modal" data-target="#registerModal">Register</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="registerModal" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Information</h4>
+                </div>
+                <div class="modal-body">
+                    <p>{{response}}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="register.redirect()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end modal -->
+</div>

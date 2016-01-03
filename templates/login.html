@@ -1,0 +1,70 @@
+<link rel="stylesheet" href="css/loginRegister.css">
+<div class="panel panel-default" ng-Controller="LoginCtrl as login">
+    <!-- <div class="panel-heading">Register</div> -->
+    <!-- <div class="panel-body"> -->
+    <div id="login-signup">
+        <div class="bg-gray-light">
+            <div class="py6">
+                <div class="user-account-form">
+                    <div class="rounded-content-frame">
+                        <div class="rounded-content-frame_content" id="login">
+                            <h2 class="title">Log in</h2>
+                            <form>
+                                <fieldset>
+                                    <div class="control-group">
+                                        <!-- E-mail -->
+                                        <label for="email" class="sr-only">E-mail</label>
+                                        <input type="email" id="email" name="email" placeholder="E-mail" class="input-text form-control" ng-model="login.userdata.email" required>
+                                        <!--  <p class="help-block">Please provide your E-mail</p> -->
+                                    </div>
+                                    <div class="control-group">
+                                        <!-- Password-->
+                                        <label for="password" class="sr-only">password</label>
+                                        <input type="password" id="password" name="password" placeholder="Password" class="input-text form-control" ng-model="login.userdata.password" required>
+                                        <!-- <p class="help-block">Password should be at least 4 characters</p> -->
+                                    </div>
+                                    <!-- Button trigger modal -->
+                                    <div class="control-group">
+                                        <!-- Forgot? -->
+                                        <label>
+                                            <a id="toRegister" data-toggle="modal" data-target="#myModal">forgot?</a>
+                                        </label>
+                                    </div>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <!-- <div class="modal-header">
+                                                </div> -->
+                                                <div class="modal-body">
+                                                    <!-- Text -->
+                                                    <p>Enter the email address you used to sign up and we'll send you a link to reset your password.</p>
+                                                    <!-- E-mail-forgot -->
+                                                    <div class="control-group">
+                                                        <label for="forgot-email" class="sr-only">E-mail</label>
+                                                        <input type="email" id="forgot-email" name="forgot-email" placeholder="E-mail" class="input-text form-control" ng-model="login.userforgot">
+                                                    </div>
+                                                    <!-- Button-continue -->
+                                                    <button class="btn btn-success " type="button" ng-click="" data-toggle="" data-target="">continue</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <!-- Submit -->
+                                        <button class="btn btn-success btn-block" type="submit" ng-click="login.doLogin()" data-toggle="modal" data-target="#loginedModal">Log me in!</button>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                        <div class="rounded-content-frame_footer">
+                            New to Count me in?
+                            <a href="#/register">Sign up!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- </div> -->
+</div>

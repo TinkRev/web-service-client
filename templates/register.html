@@ -1,0 +1,86 @@
+<link rel="stylesheet" href="css/loginRegister.css">
+<div class="panel panel-default" ng-Controller="RegisterCtrl as register">
+    <!-- <div class="panel-heading">Register</div> -->
+    <!-- <div class="panel-body"> -->
+    <div id="login-signup">
+        <div class="bg-gray-light">
+            <div class="py6">
+                <div class="user-account-form">
+                    <div class="rounded-content-frame">
+                        <div class="rounded-content-frame_content" id="signup">
+                            <h2 class="title">Sign up</h2>
+                            <form>
+                                <fieldset>
+                                    <div class="control-group">
+                                        <!-- E-mail -->
+                                        <label for="email" class="sr-only">E-mail</label>
+                                        <input type="email" id="email" name="email" placeholder="E-mail" class="input-text form-control" ng-model="register.userdata.email" required>
+                                        <!--  <p class="help-block">Please provide your E-mail</p> -->
+                                    </div>
+                                    <div class="control-group">
+                                        <!-- Password-->
+                                        <label for="password" class="sr-only">password</label>
+                                        <input type="password" id="password" name="password" placeholder="Password" class="input-text form-control" ng-model="register.userdata.password" required>
+                                        <!-- <p class="help-block">Password should be at least 4 characters</p> -->
+                                    </div>
+                                    <div class="control-group">
+                                        <!-- Password confirm-->
+                                        <label for="password_confirm" class="sr-only">Password (Confirm)</label>
+                                        <input type="password" id="password_confirm" name="password_confirm" placeholder="Password Confirm" class="input-text form-control" ng-model="register.userdata.passwordConfirm" required>
+                                        <!-- <p class="help-block">Please confirm password</p> -->
+                                    </div>
+                                    <div class="control-group">
+                                        <!-- First name-->
+                                        <label for="first_name" class="sr-only">First name</label>
+                                        <input type="text" id="first_name" name="first_name" placeholder="First Name" class="input-text form-control" ng-model="register.userdata.first_name" required>
+                                        <!-- <p class="help-block">Please provide your first name</p> -->
+                                    </div>
+                                    <div class="control-group">
+                                        <!-- Last name-->
+                                        <label for="last_name" class="sr-only">Last name</label>
+                                        <input type="text" id="last_name" name="last_name" placeholder="Last Name" class="input-text form-control" ng-model="register.userdata.last_name" required>
+                                        <!-- <p class="help-block">Please provide your last name</p> -->
+                                    </div>
+                                    <div class="control-group">
+                                        <!-- Cellphone-->
+                                        <label for="cellphone" class="sr-only">Cellphone</label>
+                                        <input type="text" id="cellphone" name="cellphone" placeholder="Cellphone" class="input-text form-control" ng-model="register.userdata.cellphone" required>
+                                        <!-- <p class="help-block">Please provide your last name</p> -->
+                                    </div>
+                                    <div class="control-group">
+                                        <!-- Address-->
+                                        <label for="address" class="sr-only">Address</label>
+                                        <input type="text" id="address" name="address" placeholder="Address" class="input-text form-control" ng-model="register.userdata.address" required>
+                                        <!-- <p class="help-block">Please provide your last name</p> -->
+                                    </div>
+                                    <div class="control-group">
+                                        <!-- GENDER-->
+                                        <label for="gender" class="sr-only">Gender</label>
+                                        <div class="controls">
+                                            <label class="radio-inline">
+                                                <input type="radio" name="optradio" ng-model="register.userdata.gender" value="Male">Male</label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="optradio" ng-model="register.userdata.gender" value="Female">Female</label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="optradio" ng-model="register.userdata.gender" value="">Keep Null</label>
+                                            <!-- <p class="help-block">Please provide your gender</p> -->
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <!-- Button -->
+                                        <button class="btn btn-success btn-block" ng-click="register.doRegister()" data-toggle="modal" data-target="#registerModal">Sign me up!</button>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                        <div class="rounded-content-frame_footer">
+                            Have an account?
+                            <a href="#/login">Log in</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- </div> -->
+</div>
