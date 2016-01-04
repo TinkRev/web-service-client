@@ -29,6 +29,10 @@ groupbuyingApp.config(['$routeProvider',
                 templateUrl: 'templates/notice.html',
                 controller: 'NoticeCtrl'
             })
+            .when('/newGroup', {
+                templateUrl: 'templates/newGroup.html',
+                controller: 'NewGroupCtrl'
+            })
             .when('/groupDetail/:group_id', {
                 templateUrl: 'templates/groupDetail.html',
                 controller: 'GroupDetailCtrl'
