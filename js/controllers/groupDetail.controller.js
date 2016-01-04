@@ -2,11 +2,11 @@
 
 groupbuyingController.controller('GroupDetailCtrl', ['$rootScope', '$scope', '$routeParams', '$http','$location', '$cookies',
     function($rootScope, $scope, $routeParams, $http, $location, $cookies) {
-    	$scope.searchGroup = $routeParams.goods_id;
+    	$scope.searchGroup = $routeParams.group_id;
 
     	var postData={
-    		group_id:$routeParams.goods_id
-    	}
+    		group_id:$routeParams.group_id
+    	};
 
     	$http.post(API_SOURCE + "/group/get/group_id", JSON.stringify(postData))
             //catch error code
@@ -21,8 +21,8 @@ groupbuyingController.controller('GroupDetailCtrl', ['$rootScope', '$scope', '$r
                         group_id: data.group_id,
                         group_name: data.group_name,
                         group_status: data.group_status,
-                        start_date: data.start_date,
-                        due_date: data.due_date,
+                        start_date: moment(data.start_date).format("YYYY-MM-DD hh:mm:ss"),
+                        due_date: moment(data.due_date).format("YYYY-MM-DD hh:mm:ss"),
                         number_threshold: data.number_threshold,
                         item:{
                         	item_id:data.item.item_id,

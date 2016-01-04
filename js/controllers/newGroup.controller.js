@@ -5,7 +5,7 @@ groupbuyingController.controller('NewGroupCtrl', ['$rootScope','$scope', '$http'
     	$scope.newGourp = this;
         $scope.response = '';
 
-        var $scope.categorylist=[];
+        $scope.categorylist=[];
 
         //get categorylist
         $http.get(API_SOURCE + "/category/get/all")

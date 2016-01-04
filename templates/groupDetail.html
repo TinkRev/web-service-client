@@ -1,0 +1,52 @@
+<div class="panel panel-default">
+    <div class="item active">
+        <div id="group">
+            <img src="{{group.item.image}}" alt="Taro_custard">
+            <div >
+                <h1>Group name: {{group.group_name}}</h1>
+                <p>There are dense taro stuffing.
+                </p>
+                <br>
+                <br>
+                <br>
+            </div>
+            <div>
+                <table class="table" style="word-break:break-all" style="width:50%" id="SMSsendTable">
+                    <thead>
+                        <tr>
+                            <th style="width:15%"></th>
+                            <th style="width:15%"></th>
+                        </tr>
+                    </thead>
+                    <tbody align="left">
+                        <tr>
+                            <td>Price</td>
+                            <td>{{group.price}}</td>
+                        </tr>
+                        <tr>
+                            <td>Specification</td>
+                            <td>{{group.item.item_specification}}</td>
+                        </tr>
+                        <tr>
+                            <td>Start time</td>
+                            <td>{{group.start_date}}</td>
+                        </tr>
+                        <tr>
+                            <td>Due time</td>
+                            <td>{{group.due_date}}</td>
+                        </tr>
+                        <tr>
+                            <td>Number threshold</td>
+                            <td>{{group.number_threshold}}</td>
+                        </tr>
+                        <tr>
+                            <td>group status</td>
+                            <td>{{group.group_status}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <button class="btn-follow" type="submit">Count me in!</button>
+</div>
