@@ -29,9 +29,9 @@ groupbuyingApp.config(['$routeProvider',
                 templateUrl: 'templates/notice.html',
                 controller: 'NoticeCtrl'
             })
-            .when('/goodsDetail/:goods_id', {
-                templateUrl: 'templates/goodsDetail.html',
-                controller: 'GoodsDetailCtrl'
+            .when('/groupDetail/:group_id', {
+                templateUrl: 'templates/groupDetail.html',
+                controller: 'GroupDetailCtrl'
             })
             .when('/update_my_watchlist/:user_id/:movie_id/:status', {
                 templateUrl: 'templates/watchList.html',

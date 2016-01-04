@@ -1,19 +1,14 @@
-// grouplist
+// goodsDetail
 
-groupbuyingController.controller('GroupListCtrl', ['$rootScope', '$scope', '$http', '$location', '$cookies',
-    function($rootScope, $scope, $http, $location, $cookies) {
-        // $rootScope.isLogin = false;
-        // 
-        $("#getul li").click(function() {
-            $("#getul li").removeClass('selected');
-            $(this).attr('class', 'selected');
-        });
+groupbuyingController.controller('GroupDetailCtrl', ['$rootScope', '$scope', '$routeParams', '$http','$location', '$cookies',
+    function($rootScope, $scope, $routeParams, $http, $location, $cookies) {
+    	$scope.searchGroup = $routeParams.goods_id;
 
-        var postData={
-    		due_date:''
+    	var postData={
+    		group_id:$routeParams.goods_id
     	}
-    	$scope.groups=[];
-    	$http.get(API_SOURCE + "/group/get/due_date/now")
+
+    	$http.post(API_SOURCE + "/group/get/group_id", JSON.stringify(postData))
             //catch error code
             .error(function(data, status) {
                 console.log(status);
