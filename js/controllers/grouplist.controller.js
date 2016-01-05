@@ -21,7 +21,7 @@ groupbuyingController.controller('GroupListCtrl', ['$rootScope', '$scope', '$htt
             .success(function(data) {
                 //get search movie list
                 if (data) {
-                    console.log(data);
+                    // console.log(data);
                     data.group.map(function(d) {
                         var image_url = './img/no_image_available.png';
                         if (d.item.image != null) {

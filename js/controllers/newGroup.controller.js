@@ -61,7 +61,7 @@ groupbuyingController.controller('NewGroupCtrl', ['$rootScope', '$scope', '$http
                     // console.log(data);
                     if (data) {
                         $scope.response = 'Create is Successful.';
-                        $location.path('/countmein');
+                        $location.path('/groupManagement');
                     } else {
                         $scope.response = 'Please check input data!';
                     }
