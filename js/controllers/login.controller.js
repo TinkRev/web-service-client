@@ -26,7 +26,7 @@ groupbuyingController.controller('LoginCtrl', ['$rootScope', '$scope', '$http','
                         $scope.response = 'Login Successful!';
                         $rootScope.isLogin = true;
                         $rootScope.loginData = {
-                            mamber_id: data.member_id,
+                            member_id: data.member_id,
                             email: data.email,
                             first_name: data.first_name,
                             last_name: data.last_name,

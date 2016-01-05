@@ -6,7 +6,6 @@
 <script src="components/angular-route/angular-route.js"></script>
 <script src="components/jquery/dist/jquery.js"></script>
 <script src="components/bootstrap/dist/js/bootstrap.js"></script>
-<script src="components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="components/moment/moment.js"></script>
 <script src="components/ng-dialog/js/ngDialog.js"></script>
 <script src="components/angular-cookies.js"></script>
@@ -19,6 +18,9 @@
 <script src="js/controllers/groupDetail.controller.js"></script>
 <script src="js/controllers/grouplist.controller.js"></script>
 <script src="js/controllers/notice.controller.js"></script>
+<script src="js/controllers/groupCategory.controller.js"></script>
+<script src="js/controllers/groupManagement.controller.js"></script>
+<script src="js/controllers/groupManagementItem.controller.js"></script>
 <script src="js/controllers/newGroup.controller.js"></script>
 <!-- Hash -->
 <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha3.js"></script>
@@ -57,11 +59,13 @@
                     <!-- login link -->
                     <li><a href="#/login" ng-show="!isLogin">Log in</a></li>
                     <!-- if login show login user -->
-                    <li><a href="" ng-show="!isLogin">Hi! {{loginData.first_name}} {{loginData.last_name}}</a></li>
+                    <li><a href="" ng-show="isLogin">Hi! {{loginData.first_name}} {{loginData.last_name}}</a></li>
+                    <!-- if login show login can create a group link -->
+                    <li><a href="#/newGroup" ng-show="isLogin">new Group</a></li>
                     <!-- if login show login user's watchlist link -->
-                    <li><a href="#/my_watchlist" ng-show="!isLogin">My Record</a></li>
+                    <li><a href="#/groupManagement" ng-show="isLogin">My Record</a></li>
                     <!-- if login show logout link -->
-                    <li><a href="#/logout" ng-show="!isLogin">Logout</a></li>
+                    <li><a href="#/logout" ng-show="isLogin">Logout</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

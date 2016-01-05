@@ -1,0 +1,183 @@
+<link rel="stylesheet" href="css/loginRegister.css">
+<div class="panel panel-default">
+    <!-- <div class="panel-heading">Register</div> -->
+    <!-- <div class="panel-body"> -->
+    <div id="countmein ">
+        <div class="py10">
+            <div class="main_content">
+                <div id="content-wrap">
+                    <div class="NS_site__homepage_staff_picks py2 bg-grey-light ">
+                        <div class="container-flex px2 py2 relative">
+                            <!-- Following Group -->
+                            <div class="row pt4">
+                                <div class="col-md-12">
+                                    <h2 class="h3 mb0 normal">
+                                            <a class="green-dark" href="">Following Group</a>
+                                        </h2>
+                                </div>
+                            </div>
+                            <!-- management List -->
+                            <div class="row" ng-repeat="order in orderlist">
+                                <div class="col-md-12 green-dark">
+                                    <div class="has_potd js-projects-slider projects-slider" id="project-slide">
+                                        <div class="row">
+                                            <div class="col col-12 no-margin potd project project0 relative selected">
+                                                <!-- project-card item-->
+                                                <div class="project-card-wrap project-card-wide-wrap bg-white rounded clip border list-item">
+                                                    <div class="row project-card py2">
+                                                        <!-- picture -->
+                                                        <div class="col col-md-4 project-thumbnail ">
+                                                            <a href="">
+                                                                <img alt="Project image" height="240" ng-src={{order.item.image}} width="320">
+                                                            </a>
+                                                        </div>
+                                                        <!-- information -->
+                                                        <div class=" col col-md-6 project-card-interior clip border-box relative ">
+                                                            <h4 class="project-title ellipsis mobile-center">
+                                                                <a class="green-dark" href="#/groupDetail/{{order.group_id}}">{{order.group_name}}</a>
+                                                            </h4>
+                                                            <!-- <p class="h6 grey-dark mobile-hide">by Elisabeth Subrin</p> -->
+                                                            <p class="blurb h5 grey-dark mb3 mobile-hide">
+                                                                Order Date: {{order.order_date}}
+                                                                <br> Order Number: {{order.order_number}}
+                                                                <br> Order Amount: {{order.order_amount}}
+                                                                <br> Status: {{order.group_status}}
+                                                                <br>
+                                                                <br> Group Information
+                                                                <br> Due Date: {{order.due_date}}
+                                                                <br> Start Date: {{order.start_date}}
+                                                                <br> Number of Fullfill: {{order.number_threshold}}
+                                                                <br> Status: {{order.group_status}}
+                                                            </p>
+                                                            <!-- project-card-footer -->
+                                                            <!-- <div class="project-card-footer absolute-bottom pl1 pr2 home-staff-picks-pr0">
+                                                                <div class="progress">
+                                                                    <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                                                        <span class="sr-only">60% Complete (warning)</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="project-stats-wrap">
+                                                                    <ul class="project-stats list no-margin h6 no-wrap">
+                                                                        <li class="first funded inline-block mr2">
+                                                                            <strong class="block h4">78%</strong> <span class="grey-dark">funded</span>
+                                                                        </li>
+                                                                        <li class="pledged inline-block mr2">
+                                                                            <strong class="block h4"><span class="money usd no-code">$31,314</span></strong> <span class="grey-dark">pledged</span>
+                                                                        </li>
+                                                                        <li class="backers inline-block mr2 mobile-hide">
+                                                                            <strong class="block h4">380</strong> <span class="grey-dark">backers</span>
+                                                                        </li>
+                                                                        <li class="last successful inline-block" style="display: none;">
+                                                                            <strong class="block h4">Funded</strong>
+                                                                            <div class="deadline grey-dark">
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="last ksr_page_timer inline-block" data-end_time="2016-01-08T20:40:00-05:00">
+                                                                            <strong class="block h6"><div class="num h4">5</div></strong>
+                                                                            <div class="span text grey-dark" data-word="left">days to go</div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>-->
+                                                        </div>
+                                                        <!-- more detail button-->
+                                                        <!-- <div class="col col-md-2 button right">
+                                                            <button class="btn" type="submit" ng-click=go({{order.group_id}})>more detail</button>
+                                                        </div> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Group By you-->
+                            <div class="row pt4">
+                                <div class="col-md-12">
+                                    <h2 class="h3 mb0 normal">
+                                            <a class="green-dark" href="">Group By you</a>
+                                        </h2>
+                                </div>
+                            </div>
+                            <!-- management List -->
+                            <div class="row">
+                                <div class="col-md-12 green-dark">
+                                    <div class="has_potd js-projects-slider projects-slider" id="project-slide">
+                                        <div class="row" ng-repeat="create in createlist">
+                                            <div class="col col-12 no-margin potd project project0 relative selected">
+                                                <!-- project-card item-->
+                                                <div class="project-card-wrap project-card-wide-wrap bg-white rounded clip border list-item">
+                                                    <div class="row project-card py2">
+                                                        <!-- picture -->
+                                                        <div class="col col-md-4 project-thumbnail ">
+                                                            <a data-pid="" href="" target="">
+                                                                <img alt="Project image" class="project-thumbnail-img" ng-src={{create.item.image}} width="100%">
+                                                            </a>
+                                                        </div>
+                                                        <!-- information -->
+                                                        <div class=" col col-md-6 project-card-interior clip border-box relative ">
+                                                            <h4 class="project-title ellipsis mobile-center">
+                                                                <a class="green-dark" href="#/groupDetail/{{create.group_id}}">{{create.group_name}}</a>
+                                                            </h4>
+                                                            <!-- <p class="h6 grey-dark mobile-hide">Joan Cornellà</p> -->
+                                                            <p class="blurb h5 grey-dark mb3 mobile-hide">
+                                                                Due Date: {{create.due_date}}
+                                                                <br> Start Date: {{create.start_date}}
+                                                                <br> Number of Fullfill: {{create.number_threshold}}
+                                                                <br> Status: {{create.group_status}}
+                                                            </p>
+                                                            <!-- project-card-footer -->
+                                                            <!-- <div class="project-card-footer absolute-bottom pl1 pr2 home-staff-picks-pr0">
+                                                                <div class="progress">
+                                                                    <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+                                                                        <span class="sr-only">90% Complete (warning)</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="project-stats-wrap">
+                                                                    <ul class="project-stats list no-margin h6 no-wrap">
+                                                                        <li class="first funded inline-block mr2">
+                                                                            <strong class="block h4">93%</strong>
+                                                                            <span class="grey-dark">funded</span>
+                                                                        </li>
+                                                                        <li class="pledged inline-block mr2">
+                                                                            <strong class="block h4"><span class="money usd no-code">€74,704</span></strong> <span class="grey-dark">pledged</span>
+                                                                        </li>
+                                                                        <li class="backers inline-block mr2 mobile-hide">
+                                                                            <strong class="block h4">1,799</strong> <span class="grey-dark">backers</span>
+                                                                        </li>
+                                                                        <li class="last successful inline-block" style="display: none;">
+                                                                            <strong class="block h4">Funded</strong>
+                                                                            <div class="deadline grey-dark">
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="last ksr_page_timer inline-block" data-end_time="2016-01-08T20:40:00-05:00">
+                                                                            <strong class="block h6"><div class="num h4">5</div></strong>
+                                                                            <div class="span text grey-dark" data-word="left">days to go</div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div> -->
+                                                        </div>
+                                                        <!-- more detail button-->
+                                                        <!-- <div class="col col-md-2 button right">
+                                                            <button class="btn " type="submit" ng-click=go({{create.group_id}})>more detail</button>
+                                                        </div> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" ">
+                    </div>
+                    <div class=" ">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- </div> -->
+</div>

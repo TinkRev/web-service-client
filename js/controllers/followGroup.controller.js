@@ -1,8 +1,8 @@
 // new group
 
-groupbuyingController.controller('NewGroupCtrl', ['$rootScope', '$scope', '$http', '$location',
+groupbuyingController.controller('FollowGroupCtrl', ['$rootScope', '$scope', '$http', '$location',
     function($rootScope, $scope, $http, $location) {
-        $scope.newGourp = this;
+        $scope.followGroup = this;
         $scope.response = '';
 
 

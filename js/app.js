@@ -29,6 +29,10 @@ groupbuyingApp.config(['$routeProvider',
                 templateUrl: 'templates/notice.html',
                 controller: 'NoticeCtrl'
             })
+            .when('/groupCategory', {
+                templateUrl: 'templates/groupCategory.html',
+                controller: 'GroupCategoryCtrl'
+            })
             .when('/newGroup', {
                 templateUrl: 'templates/newGroup.html',
                 controller: 'NewGroupCtrl'
@@ -37,9 +41,17 @@ groupbuyingApp.config(['$routeProvider',
                 templateUrl: 'templates/groupDetail.html',
                 controller: 'GroupDetailCtrl'
             })
-            .when('/update_my_watchlist/:user_id/:movie_id/:status', {
-                templateUrl: 'templates/watchList.html',
-                controller: 'UpdateWatchListCtrl'
+            .when('/follow/:user_id/:group_id', {
+                templateUrl: 'templates/follow_group.html',
+                controller: 'FollowGroupCtrl'
+            })
+            .when('/groupManagement', {
+                templateUrl: 'templates/groupManagement.html',
+                controller: 'GroupManagementCtrl'
+            })
+            .when('/groupManagementItem/:group_id', {
+                templateUrl: 'templates/groupManagementItem.html',
+                controller: 'GroupManagementItemCtrl'
             })
             .otherwise({
                 redirectTo: '/countmein'

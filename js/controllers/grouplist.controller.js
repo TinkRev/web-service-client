@@ -38,5 +38,12 @@ groupbuyingController.controller('GroupListCtrl', ['$rootScope', '$scope', '$htt
                     console.log("no data");
                 }
             });
+        //check login data
+        var loginData = $cookies.getObject('loginData');
+        if (loginData) {
+            // console.log(loginData);
+            $rootScope.loginData = loginData;
+            $rootScope.isLogin = true;
+        };
     }
 ])

@@ -1,8 +1,8 @@
-// goodsDetail
+// groupManagementItem
 
-groupbuyingController.controller('GroupDetailCtrl', ['$rootScope', '$scope', '$routeParams', '$http','$location', '$cookies',
-    function($rootScope, $scope, $routeParams, $http, $location, $cookies) {
-    	$scope.searchGroup = $routeParams.group_id;
+groupbuyingController.controller('GroupManagementItemCtrl', ['$rootScope', '$scope', '$http', '$location', '$cookies',
+    function($rootScope, $scope, $http, $location, $cookies) {
+       $scope.searchGroup = $routeParams.group_id;
 
     	var postData={
     		group_id:$routeParams.group_id
@@ -14,12 +14,8 @@ groupbuyingController.controller('GroupDetailCtrl', ['$rootScope', '$scope', '$r
                 console.log(status);
             })
             .success(function(data) {
-
+                //get search movie list
                 if (data) {
-                    var image_url = './img/no_image_available.png';
-                        if (data.item.image != null) {
-                            image_url = data.item.image
-                        };
                     console.log(data);
                     $scope.group = {
                         group_id: data.group_id,
@@ -34,7 +30,7 @@ groupbuyingController.controller('GroupDetailCtrl', ['$rootScope', '$scope', '$r
                         	price:data.item.price,
                         	item_specification:data.item.item_specification,
                         	item_description:data.item.item_description,
-                        	image:image_url,
+                        	image:data.item.image,
                         	category_id:data.item.category_id
                         }
                     };
@@ -42,5 +38,4 @@ groupbuyingController.controller('GroupDetailCtrl', ['$rootScope', '$scope', '$r
                     console.log("no data");
                 }
             });
-    }
-])
+    }])
