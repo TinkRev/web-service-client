@@ -1,57 +1,31 @@
 // new group
 
-groupbuyingController.controller('FollowGroupCtrl', ['$rootScope', '$scope', '$http', '$location',
-    function($rootScope, $scope, $http, $location) {
+groupbuyingController.controller('FollowGroupCtrl', ['$rootScope', '$scope', '$http', '$location', '$routeParams',
+    function($rootScope, $scope, $http, $location, $routeParams) {
         $scope.followGroup = this;
+        $scope.group_id=$routeParams.group_id;
+        $scope.price=$routeParams.price;
         $scope.response = '';
 
-
-        $scope.categorylist = [];
-
-        //get categorylist
-        $http.get(API_SOURCE + "/category/get/all")
-            //catch error code
-            .error(function(datas, status) {
-                console.log(status);
-            })
-            .success(function(data) {
-                //get search movie list
-                if (data) {
-                    // console.log(data);
-                    data.category.map(function(d) {
-                        $scope.categorylist.push({
-                            category_id: d.category_id,
-                            category_name: d.category_name
-                        });
-                    });
-                } else {
-                    console.log("no data");
-                }
-            });
-
-        this.group = {
-            group_name: '',
-            due_date: '',
-            number_threshold: '',
-            item_name: '',
-            price: '',
-            item_specification: '',
-            category: '',
-            item_description: ''
+        this.order = {
+            order_number: '',
+            receiver_name: '',
+            receiver_address: '',
+            receiver_phone: '',
+            price: $routeParams.price
         };
-        this.doCreate = function() {
+
+        this.doOrder = function() {
             var postData = {
                 member_id: $rootScope.loginData.member_id,
-                group_name: this.group.group_name,
-                due_date: this.group.due_date,
-                number_threshold: this.group.number_threshold,
-                item_name: this.group.item_name,
-                price: this.group.price,
-                item_specification: this.group.item_specification,
-                category: this.group.category,
-                item_description: this.group.item_description,
+                group_id: $scope.group_id,
+                order_number: this.order.order_number,
+                order_amount: this.order.order_number*this.order.price,
+                receiver_name: this.order.receiver_name,
+                receiver_address: this.order.receiver_address,
+                receiver_phone: this.order.receiver_phone
             }
-            $http.post(API_SOURCE + "/group/create", JSON.stringify(postData))
+            $http.post(API_SOURCE + "/order/post", JSON.stringify(postData))
                 //catch error code
                 .error(function(data, status) {
                     console.log(status);
@@ -60,7 +34,7 @@ groupbuyingController.controller('FollowGroupCtrl', ['$rootScope', '$scope', '$h
                 .success(function(data) {
                     // console.log(data);
                     if (data) {
-                        $scope.response = 'Create is Successful.';
+                        $scope.response = 'Order is Successful.';
                         $location.path('/countmein');
                     } else {
                         $scope.response = 'Please check input data!';

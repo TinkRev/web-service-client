@@ -21,16 +21,28 @@ groupbuyingController.controller('GroupListCtrl', ['$rootScope', '$scope', '$htt
             .success(function(data) {
                 //get search movie list
                 if (data) {
-                    // console.log(data);
+                    console.log(data);
                     data.group.map(function(d) {
+                        var image_url = './img/no_image_available.png';
+                        if (d.item.image != null) {
+                            image_url = d.item.image
+                        };
                         $scope.groups.push({
                             group_id: d.group_id,
                             group_name: d.group_name,
                             group_status: d.group_status,
-                            start_date: d.start_date,
-                            due_date: d.due_date,
+                            start_date: moment(d.start_date).format("YYYY-MM-DD hh:mm:ss"),
+                            due_date: moment(d.due_date).format("YYYY-MM-DD hh:mm:ss"),
                             number_threshold: d.number_threshold,
-                            item_id: d.item_id
+                            item: {
+                                item_id:d.item.item_id,
+                                item_name:d.item.item_name,
+                                image:image_url,
+                                item_specification:d.item.item_specification,
+                                category_id:d.item.category_id,
+                                item_description:d.item.item_description,
+                                price:d.item.price
+                            }
                         });
                     });
 

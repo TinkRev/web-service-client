@@ -41,7 +41,7 @@ groupbuyingApp.config(['$routeProvider',
                 templateUrl: 'templates/groupDetail.html',
                 controller: 'GroupDetailCtrl'
             })
-            .when('/follow/:user_id/:group_id', {
+            .when('/follow/:group_id/:price', {
                 templateUrl: 'templates/follow_group.html',
                 controller: 'FollowGroupCtrl'
             })

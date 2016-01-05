@@ -20,26 +20,34 @@
                                     </div>
                                 </div>
                                 <div class="form-group control-group">
-                                    <!-- Name-->
-                                    <label for="name" class="col-sm-2 right">Name</label>
+                                    <!-- Group Name-->
+                                    <label for="name" class="col-sm-2 right">Group Name</label>
                                     <div class="col-sm-10 ">
-                                        <input type="text" id="name" name="name" placeholder="name" class="input-text form-control" ng-model="newGourp.group.group_name" required>
+                                        <input type="text" id="name" name="name" placeholder="Group Name" class="input-text form-control" ng-model="newGourp.group.group_name" required>
                                         <!-- <p class="help-block">Password should be at least 4 characters</p> -->
                                     </div>
                                 </div>
-                                <!-- Target-->
-                                <!-- <div class="form-group control-group">
-                                    <label for="target" class="col-sm-2 right">Target</label>
+                                <!-- Item Name-->
+                                <div class="form-group control-group">
+                                    <label for="item" class="col-sm-2 right">Item Name</label>
                                     <div class="col-sm-10 ">
-                                        <input type="text" id="target" name="target" placeholder="target" class="input-text form-control" ng-model="" required>
+                                        <input type="text" id="item" name="item" placeholder="Item Name" class="input-text form-control" ng-model="newGourp.group.item_name" required>
                                     </div>
-                                </div> -->
+                                </div>
+
+                                <!-- Number Threshold-->
+                                <div class="form-group control-group">
+                                    <label for="number_threshold" class="col-sm-2 right">Number Threshold</label>
+                                    <div class="col-sm-10 ">
+                                        <input type="text" id="number_threshold" name="number_threshold" placeholder="Number Threshold" class="input-text form-control" ng-model="newGourp.group.number_threshold" required>
+                                    </div>
+                                </div>
                                 
                                 <div class="form-group control-group">
-                                    <!-- Date-->
-                                    <label for="deadline" class="col-sm-2 right">Date</label>
+                                    <!-- Due Date-->
+                                    <label for="deadline" class="col-sm-2 right">Due Date</label>
                                     <div class="col-sm-10 ">
-                                        <input type="text" id="date" name="date" placeholder="date" class="input-text form-control" ng-model="newGourp.group.due_date" required>
+                                        <input type="text" id="date" name="date" placeholder="Due Date" class="input-text form-control" ng-model="newGourp.group.due_date" required>
                                         <!-- <p class="help-block">Password should be at least 4 characters</p> -->
                                     </div>
                                 </div>
@@ -69,7 +77,7 @@
                                 
                                 <div class="control-group">
                                     <!-- Button -->
-                                    <button class="btn btn-success btn-block" ng-click="" data-toggle="modal" data-target="">Create a Group now!</button>
+                                    <button class="btn btn-success btn-block" ng-click="newGourp.doCreate()" data-toggle="modal" data-target="">Create a Group now!</button>
                                 </div>
                             </fieldset>
                         </form>

@@ -12,64 +12,45 @@
                         <form class="form-horizontal">
                             <fieldset>
                                 <div class="form-group control-group">
-                                    <!-- Category -->
-                                    <label for="category" class="col-sm-2 right">Order number</label>
+                                    <!-- Price -->
+                                    <label for="price" class="col-sm-2 right">Price</label>
                                     <div class="col-sm-10">
-                                        <input type="text" id="category" name="category" placeholder="Category" class="input-text form-control" ng-model="newGourp.group.category" required>
-                                        <!--  <p class="help-block">Please provide your E-mail</p> -->
+                                        <label for="pricemomey" class="col-sm-2 right">{{followGroup.order.price}}</label>
                                     </div>
                                 </div>
                                 <div class="form-group control-group">
-                                    <!-- Name-->
-                                    <label for="name" class="col-sm-2 right">Name</label>
-                                    <div class="col-sm-10 ">
-                                        <input type="text" id="name" name="name" placeholder="name" class="input-text form-control" ng-model="newGourp.group.group_name" required>
-                                        <!-- <p class="help-block">Password should be at least 4 characters</p> -->
+                                    <!-- Order number -->
+                                    <label for="category" class="col-sm-2 right">Order Number</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" id="category" name="category" placeholder="Order Number" class="input-text form-control" ng-model="followGroup.order.order_number" required>
                                     </div>
                                 </div>
-                                <!-- Target-->
-                                <!-- <div class="form-group control-group">
-                                    <label for="target" class="col-sm-2 right">Target</label>
+                                <div class="form-group control-group">
+                                    <!-- Receiver Name-->
+                                    <label for="name" class="col-sm-2 right">Receiver Name</label>
                                     <div class="col-sm-10 ">
-                                        <input type="text" id="target" name="target" placeholder="target" class="input-text form-control" ng-model="" required>
+                                        <input type="text" id="name" name="name" placeholder="Receiver Name" class="input-text form-control" ng-model="followGroup.order.receiver_name" required>
                                     </div>
-                                </div> -->
+                                </div>
                                 
                                 <div class="form-group control-group">
-                                    <!-- Date-->
-                                    <label for="deadline" class="col-sm-2 right">Date</label>
+                                    <!-- Address-->
+                                    <label for="address" class="col-sm-2 right">Receiver Address</label>
                                     <div class="col-sm-10 ">
-                                        <input type="text" id="date" name="date" placeholder="date" class="input-text form-control" ng-model="newGourp.group.due_date" required>
-                                        <!-- <p class="help-block">Password should be at least 4 characters</p> -->
+                                        <input type="text" id="address" name="address" placeholder="Receiver Address" class="input-text form-control" ng-model="followGroup.order.receiver_address" required>
                                     </div>
                                 </div>
                                 <div class="form-group control-group">
-                                    <!-- descript-->
-                                    <label for="descript" class="col-sm-2 right">Descript</label>
+                                    <!-- Phone-->
+                                    <label for="Phone" class="col-sm-2 right">Receiver Phone</label>
                                     <div class="col-sm-10 ">
-                                        <textarea id="descript" name="descript" placeholder="descript" class="input-text form-control" ng-model="newGourp.group.item_description" required rows="4"></textarea>
+                                        <input id="Phone" name="Phone" placeholder="Receiver Phone" class="input-text form-control" ng-model="followGroup.order.receiver_phone" required></textarea>
                                     </div>
                                 </div>
-                                <div class="form-group control-group">
-                                    <!-- Spec1-->
-                                    <label for="password_confirm" class="col-sm-2 right">Spec</label>
-                                    <div class="col-sm-10 form-inline">
-                                        <input type="text" id="sepc-description" name="sepc-description" placeholder="sepc-description" class="input-text form-control" ng-model="newGourp.group.item_specification" required>
-                                        <input type="text" id="price" name="price" placeholder="price$$" class="input-text form-control" ng-model="newGourp.group.price" required>
-                                        <!-- <p class="help-block">Please confirm password</p> -->
-                                    </div>
-                                </div>
-                                <!-- picture-->
-                                <!-- <div class="form-group control-group">
-                                    <label for="picture" class="col-sm-2 right">picture</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" id="picture" name="picture" placeholder="picture" class="input-text form-control" ng-model="" required>
-                                    </div>
-                                </div> -->
-                                
+                                                                
                                 <div class="control-group">
                                     <!-- Button -->
-                                    <button class="btn btn-success btn-block" ng-click="" data-toggle="modal" data-target="">Create a Group now!</button>
+                                    <button class="btn btn-success btn-block" ng-click="followGroup.doOrder()" data-toggle="modal" data-target="">Order now!</button>
                                 </div>
                             </fieldset>
                         </form>

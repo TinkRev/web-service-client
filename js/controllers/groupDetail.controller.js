@@ -42,5 +42,9 @@ groupbuyingController.controller('GroupDetailCtrl', ['$rootScope', '$scope', '$r
                     console.log("no data");
                 }
             });
+    
+        $scope.go = function() {
+                $location.path('/follow'+'/'+$scope.group.group_id+'/'+$scope.group.item.price);
+        };
     }
 ])
