@@ -23,6 +23,7 @@ groupbuyingController.controller('LoginCtrl', ['$rootScope', '$scope', '$http','
                 })
                 .success(function(data) {
                     if (data) {
+                        alert('login success!');
                         $scope.response = 'Login Successful!';
                         $rootScope.isLogin = true;
                         $rootScope.loginData = {
@@ -35,12 +36,15 @@ groupbuyingController.controller('LoginCtrl', ['$rootScope', '$scope', '$http','
                             gender: data.gender,
                             joindate: data.joindate
                         };
+                        console.log(data);
+
                         // set cookie
                         $cookies.putObject('loginData',$rootScope.loginData);
                         $location.path('/countmein');
                     } else {
                         $rootScope.isLogin = false;
                         $scope.response = 'Please check your input data.';
+                        alert('Please check your input data.');
                     }
                 });
         }

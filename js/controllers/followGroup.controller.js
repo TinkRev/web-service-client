@@ -42,6 +42,13 @@ groupbuyingController.controller('FollowGroupCtrl', ['$rootScope', '$scope', '$h
                 });
 
         }
+        console.log($rootScope.loginData);
+        this.fill= function(){
+            this.order.receiver_name=$rootScope.loginData.first_name+' '+$rootScope.loginData.last_name;
+            this.order.receiver_address=$rootScope.loginData.address;
+            this.order.receiver_phone=$rootScope.loginData.cellphone;
+        }
+
         this.redirect = function() {
             if ($scope.response == 'Register is Successful.') {
                 $location.path('/countmein');

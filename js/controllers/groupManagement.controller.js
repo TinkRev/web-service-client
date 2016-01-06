@@ -11,6 +11,7 @@ groupbuyingController.controller('GroupManagementCtrl', ['$rootScope', '$scope',
             //catch error code
             .error(function(datas, status) {
                 console.log(status);
+                console.log(datas);
             })
             .success(function(datas) {
                 // console.log(datas);
